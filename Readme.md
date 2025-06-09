@@ -94,35 +94,15 @@ Storage: IPFS
 Wallets: MetaMask, other Web3-compatible wallets
 
 
-
-## Project Structure
-raiseOnChain/
-├── contracts/          # Smart contract files
-├── src/
-│   ├── components/     # UI components
-│   ├── context/        # Web3 context and providers
-│   ├── pages/          # Route pages
-│   ├── styles/         # Tailwind & global styles
-│   └── utils/          # Helper functions
-├── public/             # Static assets
-├── README.md
-└── package.json
-
-
-
 ## Contributing
-# 1. Fork the repository
-# 2. Create your feature branch
-git checkout -b feature/AmazingFeature
-
-# 3. Commit your changes
-git commit -m 'Add some AmazingFeature'
-
-# 4. Push to your branch
-git push origin feature/AmazingFeature
-
-# 5. Open a Pull Request
-
+1. Fork the repository
+2. Create your feature branch
+    git checkout -b feature/AmazingFeature
+3. Commit your changes
+    git commit -m 'Add some AmazingFeature'
+4. Push to your branch
+    git push origin feature/AmazingFeature
+5. Open a Pull Request
 
 
 
