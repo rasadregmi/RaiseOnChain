@@ -23,7 +23,7 @@ const Campaigns = () => {
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop",
       category: "community",
       deadline: "2024-02-15",
-      creator: "0x1234...5678",
+      creator: "0xf50BAdCae662408DF1F06D35082644eFBd459C9B",
       donors: 156,
       daysLeft: 12
     },
@@ -36,7 +36,7 @@ const Campaigns = () => {
       image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop",
       category: "charity",
       deadline: "2024-01-30",
-      creator: "0x8765...4321",
+      creator: "0xf50BAdCae662408DF1F06D35082644eFBd459C9B",
       donors: 89,
       daysLeft: 5
     },
@@ -49,7 +49,7 @@ const Campaigns = () => {
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
       category: "education",
       deadline: "2024-03-01",
-      creator: "0x9876...5432",
+      creator: "0xf50BAdCae662408DF1F06D35082644eFBd459C9B",
       donors: 234,
       daysLeft: 25
     },
@@ -62,7 +62,7 @@ const Campaigns = () => {
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
       category: "healthcare",
       deadline: "2024-02-20",
-      creator: "0x5432...1098",
+      creator: "0xf50BAdCae662408DF1F06D35082644eFBd459C9B",
       donors: 312,
       daysLeft: 15
     },
@@ -75,7 +75,7 @@ const Campaigns = () => {
       image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=300&fit=crop",
       category: "environment",
       deadline: "2024-04-15",
-      creator: "0x2109...8765",
+      creator: "0xf50BAdCae662408DF1F06D35082644eFBd459C9B",
       donors: 445,
       daysLeft: 45
     },
@@ -88,7 +88,7 @@ const Campaigns = () => {
       image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=300&fit=crop",
       category: "art",
       deadline: "2024-02-10",
-      creator: "0x6543...2109",
+      creator: "0xf50BAdCae662408DF1F06D35082644eFBd459C9B",
       donors: 78,
       daysLeft: 8
     }
@@ -171,6 +171,11 @@ const Campaigns = () => {
   const handleCloseDonationModal = () => {
     setIsDonationModalOpen(false);
     setSelectedCampaign(null);
+  };
+
+  const formatAddress = (address) => {
+    // Implement your formatting logic here
+    return address.slice(0, 6) + '...' + address.slice(-4);
   };
 
   if (isLoading) {
@@ -362,7 +367,7 @@ const Campaigns = () => {
                       {/* Campaign Footer */}
                       <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                         <div className="text-sm text-gray-500">
-                          <span>Creator: {campaign.creator}</span>
+                          <span>Creator: {formatAddress(campaign.creator)}</span>
                         </div>
                         <div className="flex gap-2">
                           <Link

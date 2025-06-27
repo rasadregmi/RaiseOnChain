@@ -42,16 +42,22 @@ export const Web3Provider = ({ children }) => {
         params: [address, 'latest']
       });
       
-      console.log('Balance in Wei:', balanceWei);
+      console.log('Balance in Wei (hex):', balanceWei);
+      
+      // Convert hex string to decimal
+      const balanceWeiDecimal = parseInt(balanceWei, 16);
+      console.log('Balance in Wei (decimal):', balanceWeiDecimal);
       
       // Convert from Wei to Ether (18 decimals)
-      const balanceEth = parseFloat(balanceWei) / Math.pow(10, 18);
+      const balanceEth = balanceWeiDecimal / Math.pow(10, 18);
       console.log('Balance in ETH:', balanceEth);
       
       setBalance({
         displayValue: balanceEth.toFixed(4),
         symbol: 'SEP'
       });
+      
+      console.log('Final balance set to:', balanceEth.toFixed(4), 'SEP');
     } catch (error) {
       console.error('Failed to fetch balance:', error);
       setBalance({ displayValue: '0', symbol: 'SEP' });
@@ -116,28 +122,42 @@ export const Web3Provider = ({ children }) => {
     setIsConnecting(true);
     setConnectionError(null);
     
+    console.log('=== WALLET CONNECTION ATTEMPT ===');
+    console.log('Ethereum provider available:', typeof window.ethereum !== 'undefined');
+    
     try {
       // Check if MetaMask is installed
       if (typeof window.ethereum === 'undefined') {
         throw new Error('MetaMask is not installed. Please install MetaMask to continue.');
       }
 
+      console.log('Requesting accounts...');
       // Request account access
       const accounts = await window.ethereum.request({ 
         method: 'eth_requestAccounts' 
       });
       
+      console.log('Accounts received:', accounts);
+      
       if (accounts.length > 0) {
+        console.log('Setting wallet address:', accounts[0]);
         setWalletAddress(accounts[0]);
         
         // Check if we're on the correct network first
+        console.log('Checking network...');
         const isOnCorrectNetwork = await checkNetwork();
+        console.log('Is on correct network:', isOnCorrectNetwork);
+        
         if (!isOnCorrectNetwork) {
           setConnectionError('Please switch to Sepolia testnet to continue.');
         } else {
           // Only fetch balance if we're on the correct network
+          console.log('Fetching balance...');
           await fetchBalance(accounts[0]);
         }
+      } else {
+        console.log('No accounts found');
+        setConnectionError('No accounts found in MetaMask');
       }
     } catch (error) {
       console.error('Failed to connect wallet:', error);
@@ -148,6 +168,18 @@ export const Web3Provider = ({ children }) => {
   };
 
   const refreshBalance = async () => {
+    if (walletAddress) {
+      await fetchBalance(walletAddress);
+    }
+  };
+
+  const testBalance = async () => {
+    console.log('=== BALANCE TEST ===');
+    console.log('Wallet Address:', walletAddress);
+    console.log('Current Network:', currentNetwork);
+    console.log('Is Correct Network:', isCorrectNetwork);
+    console.log('Current Balance State:', balance);
+    
     if (walletAddress) {
       await fetchBalance(walletAddress);
     }
@@ -222,6 +254,7 @@ export const Web3Provider = ({ children }) => {
     disconnectWallet,
     switchToSepolia,
     refreshBalance,
+    testBalance,
     formatAddress,
     getNetworkName
   };

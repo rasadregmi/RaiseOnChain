@@ -15,6 +15,7 @@ const DonationModal = ({ campaign, isOpen, onClose }) => {
     connectWallet, 
     switchToSepolia,
     refreshBalance,
+    testBalance,
     account, 
     balance, 
     formatAddress,
@@ -24,15 +25,30 @@ const DonationModal = ({ campaign, isOpen, onClose }) => {
   const handleDonate = async (e) => {
     e.preventDefault();
     
+    console.log('=== DONATION ATTEMPT ===');
+    console.log('Is Connected:', isConnected);
+    console.log('Is Correct Network:', isCorrectNetwork);
+    console.log('Current Network:', currentNetwork);
+    console.log('Balance:', balance);
+    console.log('Donation Amount:', donationAmount);
+    
     if (!isConnected) {
-      await connectWallet();
+      console.log('Not connected, attempting to connect wallet...');
+      try {
+        await connectWallet();
+      } catch (error) {
+        console.error('Failed to connect wallet:', error);
+        setError('Failed to connect wallet: ' + error.message);
+      }
       return;
     }
 
     if (!isCorrectNetwork) {
+      console.log('Wrong network, attempting to switch to Sepolia...');
       try {
         await switchToSepolia();
       } catch (error) {
+        console.error('Failed to switch network:', error);
         setError('Failed to switch to Sepolia network. Please switch manually in MetaMask.');
       }
       return;
@@ -43,8 +59,14 @@ const DonationModal = ({ campaign, isOpen, onClose }) => {
       return;
     }
 
-    if (parseFloat(donationAmount) > parseFloat(balance?.displayValue || 0)) {
-      setError('Insufficient balance');
+    const donationAmountFloat = parseFloat(donationAmount);
+    const balanceFloat = parseFloat(balance?.displayValue || 0);
+    
+    console.log('Donation amount (float):', donationAmountFloat);
+    console.log('Balance (float):', balanceFloat);
+    
+    if (donationAmountFloat > balanceFloat) {
+      setError(`Insufficient balance. You have ${balanceFloat} SEP but trying to donate ${donationAmountFloat} SEP`);
       return;
     }
 
@@ -52,19 +74,100 @@ const DonationModal = ({ campaign, isOpen, onClose }) => {
     setError('');
 
     try {
-      // Simulate donation transaction
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      console.log('Starting real donation transaction...');
       
-      setSuccess(true);
-      setTimeout(() => {
-        onClose();
-        setSuccess(false);
-        setDonationAmount('');
-      }, 2000);
+      // Convert donation amount to Wei
+      const donationAmountWei = (donationAmountFloat * Math.pow(10, 18)).toString(16);
+      const donationAmountWeiHex = '0x' + donationAmountWei;
+      
+      console.log('Donation amount in Wei (hex):', donationAmountWeiHex);
+      
+      // Get the current gas price
+      const gasPrice = await window.ethereum.request({
+        method: 'eth_gasPrice'
+      });
+      
+      console.log('Gas price:', gasPrice);
+      
+      // Estimate gas for the transaction
+      const gasEstimate = await window.ethereum.request({
+        method: 'eth_estimateGas',
+        params: [{
+          from: account.address,
+          to: campaign.creator, // Send to campaign creator
+          value: donationAmountWeiHex
+        }]
+      });
+      
+      console.log('Estimated gas:', gasEstimate);
+      
+      // Send the transaction
+      const transactionParameters = {
+        to: campaign.creator, // Campaign creator's address
+        from: account.address,
+        value: donationAmountWeiHex,
+        gas: gasEstimate,
+        gasPrice: gasPrice
+      };
+      
+      console.log('Transaction parameters:', transactionParameters);
+      
+      // Request transaction
+      const txHash = await window.ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [transactionParameters]
+      });
+      
+      console.log('Transaction hash:', txHash);
+      
+      // Wait for transaction confirmation
+      console.log('Waiting for transaction confirmation...');
+      
+      // Poll for transaction receipt
+      let receipt = null;
+      let attempts = 0;
+      const maxAttempts = 30; // 30 seconds timeout
+      
+      while (!receipt && attempts < maxAttempts) {
+        try {
+          receipt = await window.ethereum.request({
+            method: 'eth_getTransactionReceipt',
+            params: [txHash]
+          });
+          
+          if (receipt) {
+            console.log('Transaction confirmed!', receipt);
+            break;
+          }
+        } catch (error) {
+          console.log('Waiting for confirmation...', error);
+        }
+        
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
+        attempts++;
+      }
+      
+      if (receipt && receipt.status === '0x1') {
+        console.log('Donation transaction completed successfully');
+        setSuccess(true);
+        
+        // Refresh balance after successful transaction
+        setTimeout(async () => {
+          await refreshBalance();
+        }, 1000);
+        
+        setTimeout(() => {
+          onClose();
+          setSuccess(false);
+          setDonationAmount('');
+        }, 3000);
+      } else {
+        throw new Error('Transaction failed or timed out');
+      }
       
     } catch (error) {
       console.error('Donation failed:', error);
-      setError('Transaction failed. Please try again.');
+      setError('Transaction failed: ' + error.message);
     } finally {
       setIsProcessing(false);
     }
@@ -200,6 +303,40 @@ const DonationModal = ({ campaign, isOpen, onClose }) => {
                       >
                         Refresh
                       </button>
+                    </div>
+                  </div>
+                  
+                  {/* Debug Section */}
+                  <div className="mt-3 pt-3 border-t border-gray-200">
+                    <button
+                      onClick={testBalance}
+                      className="text-xs text-gray-500 hover:text-gray-700 underline mr-3"
+                    >
+                      Debug Balance
+                    </button>
+                    <button
+                      onClick={async () => {
+                        console.log('=== METAMASK TEST ===');
+                        console.log('Ethereum provider:', typeof window.ethereum !== 'undefined');
+                        if (typeof window.ethereum !== 'undefined') {
+                          try {
+                            const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+                            console.log('Current accounts:', accounts);
+                            const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+                            console.log('Current chainId:', chainId);
+                          } catch (error) {
+                            console.error('MetaMask test failed:', error);
+                          }
+                        }
+                      }}
+                      className="text-xs text-gray-500 hover:text-gray-700 underline"
+                    >
+                      Test MetaMask
+                    </button>
+                    <div className="text-xs text-gray-400 mt-1">
+                      Network: {getNetworkName(currentNetwork)} | 
+                      Connected: {isConnected ? 'Yes' : 'No'} | 
+                      Correct Network: {isCorrectNetwork ? 'Yes' : 'No'}
                     </div>
                   </div>
                 </div>
