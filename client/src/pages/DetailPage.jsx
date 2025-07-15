@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import CampaignCard from "../components/campaigns"
 import CampaignDetail from "../components/campaignDetail";
@@ -9,7 +7,6 @@ import Engineer from "./images/engineer1.jpeg"
 import Solar from "./images/solar.jpg"
 import Tree from "./images/tree.jpg"
 import Library from "./images/library.jpg"
-
 
 export default function ProductDetailPage() {
   const relatedCampaigns = [
@@ -28,9 +25,9 @@ export default function ProductDetailPage() {
     {
       id: 2,
       image: floodImage,
-      title: "Rebuild Renu’s Home After the Floods",
+      title: "Rebuild Renu's Home After the Floods",
       description: "After devastating floods swept through her village, Renu and her family were left without a roof over their heads.This campaign aims to provide the necessary funds for rebuilding their home, acquiring basic furniture, and ensuring access to clean water and food",
-      fullDescription: "After devastating floods swept through her village, Renu and her family were left without a roof over their heads. Their home, belongings, and livelihood were destroyed overnight. This campaign aims to provide the necessary funds for rebuilding their home, acquiring basic furniture, and ensuring access to clean water and food. Using RaiseOnChain’s transparent platform, you can see how your donations are used for construction, materials, and essential aid. Together, we can restore their dignity and safety.",
+      fullDescription: "After devastating floods swept through her village, Renu and her family were left without a roof over their heads. Their home, belongings, and livelihood were destroyed overnight. This campaign aims to provide the necessary funds for rebuilding their home, acquiring basic furniture, and ensuring access to clean water and food. Using RaiseOnChain's transparent platform, you can see how your donations are used for construction, materials, and essential aid. Together, we can restore their dignity and safety.",
       raised: 1200,
       goal: 2500,
       supporters: 890,
@@ -66,7 +63,7 @@ export default function ProductDetailPage() {
       image: Tree,
       title: "Sponsor a Tree, Clean the Air",
       description: "Kathmandu is facing rising pollution and dwindling green spaces. This campaign funds a community tree-planting drive in local neighborhoods and school compounds.",
-      fullDescription: "Kathmandu is facing rising pollution and dwindling green spaces. This campaign funds a community tree-planting drive in local neighborhoods and school compounds. Your donation will cover saplings, care materials, and volunteers. Each tree’s location and growth status will be publicly updated via RaiseOnChain — making reforestation traceable and real.",
+      fullDescription: "Kathmandu is facing rising pollution and dwindling green spaces. This campaign funds a community tree-planting drive in local neighborhoods and school compounds. Your donation will cover saplings, care materials, and volunteers. Each tree's location and growth status will be publicly updated via RaiseOnChain — making reforestation traceable and real.",
       raised: 850,
       goal: 2000,
       supporters: 720,
@@ -78,7 +75,7 @@ export default function ProductDetailPage() {
       image: Solar,
       title: "Solar Power for Lightless Homes",
       description: "Many homes in rural Nepal still live in darkness after sunset. This project provides affordable solar kits to families without electricity.",
-      fullDescription: "Many homes in rural Nepal still live in darkness after sunset. This project provides affordable solar kits to families without electricity. Your donations will fund solar panels, battery storage, and basic installation. Blockchain tracking ensures accountability — you’ll know which home got light, when, and how.",
+      fullDescription: "Many homes in rural Nepal still live in darkness after sunset. This project provides affordable solar kits to families without electricity. Your donations will fund solar panels, battery storage, and basic installation. Blockchain tracking ensures accountability — you'll know which home got light, when, and how.",
       raised: 1800,
       goal: 4000,
       supporters: 980,
@@ -96,67 +93,18 @@ export default function ProductDetailPage() {
 
   return (
     <div className="max-w-screen mx-auto p-6 bg-gray-100 min-h-screen ">
-
-      {/* Main Product Section */}
       <CampaignDetail campaign={selectedCampaign}/>
-      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"> */}
-        {/* Product Image */}
-        {/* <div className="bg-white p-4 rounded-lg">
-          <img
-            src={ChildPhoto}
-            alt="FloodImage"
-            className="w-full h-auto object-cover rounded"
-            style={{ maxHeight: "400px" }}
-          />
-        </div> */}
 
-        {/* Product Details */}
-        {/* <div className="bg-white p-6 rounded-lg">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Help Maya Fight Back: Urgent Medical Aid of Cancer Treatment</h1>
-          <p className="text-gray-600 mb-4">Maya is a 7-year-old girl recently diagnosed with leukemia. Her parents, daily wage workers, are struggling to afford the chemotherapy, diagnostic tests, and regular hospital visits required to save her life. With your support, we can ensure Maya receives uninterrupted treatment at a trusted cancer hospital. Every contribution is recorded transparently on the blockchain — you’ll know exactly how your donation helps Maya heal, grow, and live the childhood she deserves.</p>
-           */}
-          {/* Fundraising Progress Component */}
-          {/* <div className="mb-6">
-            <FundraisingProgress raised={1000} goal={1900} supporters={1400} lastDonationTime="18 minutes ago" daysLeft={"24"} />
-          </div> */}
-      
-
-          {/* <Button className="w-full bg-gray-800 hover:bg-green-600 text-white py-3 mb-4" onClick={handleAddToCart}>
-            Donate
-          </Button>
-
-        </div>
-      </div> */}
-
-      {/* Related Campaigns Section */}
       <div className="mb-12">
         <h2 className="text-xl font-bold text-gray-900 mb-6">Related campaigns</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {relatedCampaigns
-            .filter((campaign) => campaign.id !== selectedCampaign.id) // Don't show the currently selected campaign
+            .filter((campaign) => campaign.id !== selectedCampaign.id)
             .map((campaign) => (
               <CampaignCard key={campaign.id} campaign={campaign} onViewDetails={handleViewDetails} />
             ))}
         </div>
       </div>
-      {/* <div className="mb-12">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Related campaigns</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {relatedCampaigns.map((campaign) => (
-            <CampaignCard
-              key={campaign.id}
-              image={campaign.image}
-              title={campaign.title}
-              description={campaign.description}
-              raised={campaign.raised}
-              goal={campaign.goal}
-              supporters={campaign.supporters}
-              daysLeft={campaign.daysLeft}
-              lastDonation={campaign.lastDonation}
-            />
-          ))}
-        </div>
-      </div> */}
     </div>
   )
 }

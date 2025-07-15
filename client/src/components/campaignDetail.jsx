@@ -1,20 +1,17 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import FundraisingProgress from "./progressBar"
 
 export default function CampaignDetail({ campaign }) {
   const handleDonate = () => {
-    console.log("Donate to campaign:", campaign.title)
+    // TODO: Implement donation functionality
   }
 
   const handleShare = () => {
-    console.log("Share campaign:", campaign.title)
+    // TODO: Implement share functionality
   }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-      {/* Campaign Image */}
       <div className="bg-white p-4 rounded-lg">
         <img
           src={campaign.image || "/placeholder.svg"}
@@ -24,12 +21,9 @@ export default function CampaignDetail({ campaign }) {
         />
       </div>
 
-      {/* Campaign Details */}
       <div className="bg-white p-6 rounded-lg">
         <h1 className="text-2xl font-bold text-gray-900 mb-2">{campaign.title}</h1>
-        {/* <p className="text-gray-600 mb-4">{campaign.category || "Medical Campaign"}</p> */}
 
-        {/* Fundraising Progress Component */}
         <div className="mb-6">
           <FundraisingProgress
             raised={campaign.raised}
@@ -42,7 +36,6 @@ export default function CampaignDetail({ campaign }) {
 
         <p className="text-gray-700 mb-6 leading-relaxed">{campaign.fullDescription || campaign.description}</p>
 
-        {/* Days Left Info */}
         {campaign.daysLeft && (
           <div className="mb-4 p-3 bg-orange-50 border border-orange-200 rounded-lg">
             <p className="text-orange-800 font-medium">⏰ Only {campaign.daysLeft} days left to contribute!</p>
