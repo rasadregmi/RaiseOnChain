@@ -15,7 +15,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8">
               <Link 
-                to="/donate" 
+                to="/campaigns" 
                 className="py-4 px-20 bg-[#e8e8e8] text-black rounded-md text-lg font-medium hover:bg-gray-200 transition-colors"
               >
                 Donate

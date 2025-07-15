@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import ProductDetailPage from './pages/DetailPage';
 import Navbar from './components/Navbar';
 
 const App = () => {
@@ -9,8 +10,10 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/campaigns" element={<ProductDetailPage />} />
+          <Route path="/campaigns/:id" element={<ProductDetailPage />} />
+          <Route path="/donate" element={<ProductDetailPage />} />
           <Route path="/about-us" element={<div className="p-10 text-center">About Us Page (Coming Soon)</div>} />
-          <Route path="/campaigns" element={<div className="p-10 text-center">Campaigns Page (Coming Soon)</div>} />
           <Route path="/how-it-works" element={<div className="p-10 text-center">How it works Page (Coming Soon)</div>} />
           <Route path="/start-campaign" element={<div className="p-10 text-center">Start Campaign Page (Coming Soon)</div>} />
         </Routes>
