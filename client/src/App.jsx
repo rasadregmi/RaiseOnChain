@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import ProductDetailPage from './pages/DetailPage';
 import Navbar from './components/Navbar';
 import AboutUsPage from './pages/AboutusPage';
+import HowItWorksPage from './pages/HowItWorksPage';
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
           <Route path="/campaigns/:id" element={<ProductDetailPage />} />
           <Route path="/donate" element={<ProductDetailPage />} />
           <Route path="/about-us" element={<AboutUsPage/>} />
-          <Route path="/how-it-works" element={<div className="p-10 text-center">How it works Page (Coming Soon)</div>} />
+          <Route path="/how-it-works" element={<HowItWorksPage/>} />
           <Route path="/start-campaign" element={<div className="p-10 text-center">Start Campaign Page (Coming Soon)</div>} />
         </Routes>
       </div>
