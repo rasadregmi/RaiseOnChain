@@ -1,132 +1,99 @@
-# RaiseOnChain - Blockchain-Based Crowdfunding Platform
+<!-- Banner & Logo -->
+<p align="center">
+  <img src="client/src/assets/raiseonchain_logo.png" alt="RaiseOnChain Logo" width="120"/>
+</p>
 
-RaiseOnChain is a **decentralized crowdfunding platform** that empowers users to create, manage, and support fundraising campaigns directly on the blockchain. By eliminating centralized intermediaries, RaiseOnChain ensures **transparency, security, and ownership** for all stakeholders.
-
-## 🚀 Live Demo
-
-*Coming soon: Localhost only (Hardhat 8545)*
-
-## ✨ Features
-
-- **Decentralized Campaign Creation**: Campaigns are created and stored immutably on the blockchain
-- **Transparent Donations**: All contributions are recorded on-chain for full public transparency
-- **Real-time Progress Tracking**: Monitor funding progress and donor activity live
-- **Wallet Integration**: Seamless Web3 wallet connectivity (MetaMask)
-- **Trustless Interactions**: Fund management is handled entirely by smart contracts
-- **Campaign Discovery**: Explore live campaigns from the homepage
-- **Donor Transparency**: View public donor lists and contribution histories per campaign
-- **Smart Contract Security**: Automated fund management with no human intervention
-- **Global Accessibility**: No geographic restrictions or centralized control
+<p align="center"><b>Decentralized Crowdfunding Platform on Blockchain</b></p>
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"/>
+  <img src="https://img.shields.io/badge/Build-Powered%20by%20Thirdweb-purple" alt="Thirdweb"/>
+  <img src="https://img.shields.io/badge/Frontend-React.js-blue" alt="React"/>
+  <img src="https://img.shields.io/badge/Smart%20Contracts-Solidity-black" alt="Solidity"/>
+  <img src="https://img.shields.io/badge/Status-Alpha-orange" alt="Status"/>
+</p>
 
 ---
 
-## Team Members
-
-- Rasad Regmi - Lead Developer (Frontend & Blockchain)
-- Sahira Maharjan - Frontend Developer
-- Regish Shrestha - Blockchain Developer
-- Aditya Thakuri - Researcher & UI/UX Designer
+<p align="center">
+  <b>Empowering transparent, secure, and global fundraising—directly on the blockchain.</b>
+</p>
 
 ---
 
-## Architecture
+# ✨ Features
 
-### Smart Contract Layer
-
-- **Built with**: Solidity & [Thirdweb](https://thirdweb.com)
-- **Responsibilities**:
-  - Campaign creation
-  - Donation processing
-  - Immutable record storage on-chain
-
-### Frontend Application
-
-- **Framework**: React.js
-- **Styling**: Tailwind CSS
-- **Web3 Integration**: Custom Web3 Context using Thirdweb SDK
-- **Navigation**: Top navbar for seamless UX
-
-### Storage & Deployment
-
-- **IPFS**: Decentralized file storage (via Thirdweb)
-- **Blockchain**: All data and transactions stored on-chain (Localhost 8545)
+- 🚀 <b>Decentralized Campaign Creation</b>: Immutably stored on the blockchain
+- 👁️ <b>Transparent Donations</b>: All contributions are public and on-chain
+- 📈 <b>Real-time Progress Tracking</b>: Live funding and donor activity
+- 🦊 <b>Wallet Integration</b>: Seamless MetaMask/Web3 support
+- 🤝 <b>Trustless Interactions</b>: Smart contracts manage all funds
+- 🔍 <b>Campaign Discovery</b>: Explore live campaigns
+- 🧾 <b>Donor Transparency</b>: Public donor lists and histories
+- 🛡️ <b>Smart Contract Security</b>: Automated, no human intervention
+- 🌍 <b>Global Accessibility</b>: No borders, no central control
 
 ---
 
-## 🛠️ Getting Started
+# 👥 Team
 
-### Prerequisites
+<table>
+  <tr>
+    <td align="center"><img src="client/src/assets/rasad.jpg" width="80"/><br/><b>Rasad Regmi</b><br/>Lead Dev</td>
+    <td align="center"><img src="client/src/assets/sahira.png" width="80"/><br/><b>Sahira Maharjan</b><br/>Frontend Dev</td>
+    <td align="center"><img src="client/src/assets/regish.png" width="80"/><br/><b>Regish Shrestha</b><br/>Blockchain Dev</td>
+    <td align="center"><img src="client/src/assets/aditya.png" width="80"/><br/><b>Aditya Thakuri</b><br/>Researcher & UI/UX</td>
+  </tr>
+</table>
 
-- Node.js (v18+)
-- MetaMask browser extension
-- Git
-- Localhost 8545 (Hardhat node)
+---
 
-### Quick Start
+# 🏗️ Architecture
+
+## 🛠️ Smart Contract Layer
+- <b>Solidity & Thirdweb</b>
+- Campaign creation, donation processing, immutable on-chain storage
+
+## 💻 Frontend Application
+- <b>React.js + Tailwind CSS</b>
+- Custom Web3 Context (Thirdweb SDK)
+- Modern, responsive UI
+
+## 🗄️ Storage & Deployment
+- <b>IPFS</b> for decentralized file storage
+- <b>Blockchain</b> for all data/transactions (Localhost 8545)
+
+---
+
+# 🚀 Quick Start
+
+> <b>Requirements:</b> Node.js (v18+), MetaMask, Git, Hardhat (Localhost 8545)
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone <your-repo-url>
 cd RaiseOnChain
 
-# Install all dependencies
+# 2. Install dependencies
 npm install
 cd client && npm install
 
-# Start Hardhat node (in a new terminal)
+# 3. Start Hardhat node (new terminal)
 npx hardhat node
 
-# Deploy smart contract to Localhost 8545
+# 4. Deploy smart contract
 npx hardhat run scripts/deploy.js --network localhost
 
-# Start the development server (in client directory)
+# 5. Start frontend (in client/)
 npm run dev
 ```
 
-### Detailed Setup
+> 💡 <b>Tip:</b> After deploying, update the contract address in <code>client/src/services/contractService.js</code>.
 
-1. **Install Dependencies**
-   ```bash
-   npm install
-   cd client && npm install
-   ```
-2. **Configure MetaMask**
-   - Install MetaMask browser extension
-   - Add Localhost 8545 network to MetaMask
-   - Use pre-funded accounts from Hardhat node
-3. **Deploy Smart Contract**
-   ```bash
-   npx hardhat run scripts/deploy.js --network localhost
-   ```
-4. **Update Contract Address**
-   - After deployment, copy the contract address
-   - Update `client/src/services/contractService.js` with the new address
-5. **Start Development Server**
-   ```bash
-   cd client
-   npm run dev
-   ```
-6. **Access the Application**
-   - Open http://localhost:5173
-   - Connect your MetaMask wallet
-   - Switch to Localhost 8545
-   - Start creating and donating to campaigns!
+---
 
-## 🏗️ Technology Stack
+# 🧩 Project Structure
 
-| Component         | Technology                |
-|-------------------|--------------------------|
-| **Blockchain**    | Ethereum (Localhost 8545) |
-| **Smart Contracts** | Solidity, Thirdweb      |
-| **Frontend**      | React.js, Vite           |
-| **Styling**       | Tailwind CSS             |
-| **Web3 Integration** | Thirdweb SDK           |
-| **Wallet Support** | MetaMask                |
-| **Storage**       | IPFS (Decentralized)     |
-
-## 📁 Project Structure
-
-```
+```text
 RaiseOnChain/
 ├── contracts/                 # Smart contracts
 │   └── CrowdfundingCampaign.sol
@@ -143,130 +110,145 @@ RaiseOnChain/
 └── package.json
 ```
 
-## 🧑‍💻 How It Works
+---
 
-### The Process
+# 🧑‍💻 How It Works
 
-1. **Create Your Campaign**
-   - Set up your fundraising campaign with a clear goal, description, and deadline. All campaign data is stored on the blockchain for transparency.
-   - Set your funding goal in ETH (Localhost 8545)
-   - Add campaign description and images
-   - Choose a category and set deadline
-   - Provide beneficiary wallet address
-2. **Connect Your Wallet**
-   - Users connect their MetaMask wallet to the platform. This enables secure transactions and ensures you're on the correct network (Localhost 8545).
-   - Install MetaMask browser extension
-   - Connect wallet to RaiseOnChain
-   - Switch to Localhost 8545
-   - Ensure sufficient ETH balance
-3. **Make Donations**
-   - Donate directly to campaigns using cryptocurrency. All transactions are recorded on the blockchain and visible to everyone for complete transparency.
-   - Browse available campaigns
-   - Choose donation amount
-   - Confirm transaction in MetaMask
-   - Track donation on blockchain
-4. **Funds Released**
-   - When a campaign reaches its goal or deadline, funds are automatically released to the beneficiary through smart contracts, ensuring trustless execution.
-   - Automatic fund release on success
-   - Smart contract execution
-   - Transparent fund distribution
-   - Public transaction records
+<details>
+<summary><b>1. Create Your Campaign</b></summary>
+<ul>
+  <li>Set up your campaign with a goal, description, deadline, and images.</li>
+  <li>All data is stored on-chain for transparency.</li>
+</ul>
+</details>
 
-### Key Features
+<details>
+<summary><b>2. Connect Your Wallet</b></summary>
+<ul>
+  <li>Connect MetaMask to Localhost 8545.</li>
+  <li>Use pre-funded Hardhat accounts.</li>
+</ul>
+</details>
 
-- **Decentralized**: No central authority controls your funds. Smart contracts handle everything automatically.
-- **Transparent**: All transactions and campaign data are publicly visible on the blockchain.
-- **Secure**: Blockchain technology ensures funds are secure and cannot be tampered with.
-- **Global**: Accessible to anyone with an internet connection and a Web3 wallet.
+<details>
+<summary><b>3. Make Donations</b></summary>
+<ul>
+  <li>Donate ETH directly to campaigns.</li>
+  <li>All transactions are public and transparent.</li>
+</ul>
+</details>
 
-### Why Blockchain?
-
-- **Traditional Crowdfunding Issues**:
-  - High platform fees (5-10% of funds raised)
-  - Lack of transparency in fund usage
-  - Centralized control and censorship
-  - Geographic restrictions and limitations
-- **RaiseOnChain Solutions**:
-  - Minimal gas fees only (no platform fees)
-  - Complete transparency with public blockchain records
-  - Decentralized and censorship-resistant
-  - Global accessibility with no restrictions
-
-### Getting Started
-
-1. **Install MetaMask**: Download and install the MetaMask browser extension
-2. **Get Test ETH**: You already have test ETH in your Localhost 8545 accounts (provided by Hardhat node).
-3. **Start Campaign**: Create your first campaign or donate to existing ones
+<details>
+<summary><b>4. Funds Released</b></summary>
+<ul>
+  <li>Funds are released automatically by smart contracts when goals are met or deadlines pass.</li>
+</ul>
+</details>
 
 ---
 
-## 🤝 Contributing
+# 🏆 Key Advantages
 
-We welcome contributions from the community! Here's how you can help:
+- <b>Decentralized</b>: No central authority, smart contracts handle everything
+- <b>Transparent</b>: All data and transactions are public
+- <b>Secure</b>: Blockchain ensures funds can't be tampered with
+- <b>Global</b>: Anyone, anywhere, anytime
 
-1. **Fork the repository**
-2. **Create your feature branch**
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. **Commit your changes**
-   ```bash
-   git commit -m 'Add some AmazingFeature'
-   ```
-4. **Push to your branch**
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-5. **Open a Pull Request**
+---
 
-### Development Guidelines
+# 💡 Why Blockchain?
 
-- Follow the existing code style and conventions
-- Add tests for new features
-- Update documentation as needed
-- Ensure all tests pass before submitting
+> <b>Traditional Crowdfunding Issues:</b>
+> - High platform fees
+> - Lack of transparency
+> - Centralized control/censorship
+> - Geographic restrictions
 
-## 🐛 Troubleshooting
+> <b>RaiseOnChain Solutions:</b>
+> - Minimal gas fees only
+> - Full transparency (public blockchain)
+> - Decentralized, censorship-resistant
+> - Global access
 
-### Common Issues
+---
 
-1. **MetaMask Connection Issues**
-   - Ensure MetaMask is installed and unlocked
-   - Check that you're connected to Localhost 8545
-   - Try refreshing the page
-2. **Contract Deployment Issues**
-   - Verify you have sufficient ETH for gas fees
-   - Check that your wallet is connected to Localhost 8545
-   - Ensure all dependencies are installed
-3. **Transaction Failures**
-   - Check your ETH balance
-   - Verify gas fees are sufficient
-   - Ensure you're on the correct network
+# 🛠️ Technology Stack
 
-### Getting Help
+| Component         | Technology                |
+|-------------------|--------------------------|
+| <b>Blockchain</b>    | Ethereum (Localhost 8545) |
+| <b>Smart Contracts</b> | Solidity, Thirdweb      |
+| <b>Frontend</b>      | React.js, Vite           |
+| <b>Styling</b>       | Tailwind CSS             |
+| <b>Web3 Integration</b> | Thirdweb SDK           |
+| <b>Wallet Support</b> | MetaMask                |
+| <b>Storage</b>       | IPFS (Decentralized)     |
 
-- Check the Issues page
-- Create a new issue with detailed information
-- Join our community discussions
+---
 
-## 📄 License
+# 🤝 Contributing
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+We welcome contributions from the community!
 
-## 🙏 Acknowledgments
+1. <b>Fork</b> the repository
+2. <b>Create your feature branch</b>
+   <pre>git checkout -b feature/AmazingFeature</pre>
+3. <b>Commit your changes</b>
+   <pre>git commit -m 'Add some AmazingFeature'</pre>
+4. <b>Push to your branch</b>
+   <pre>git push origin feature/AmazingFeature</pre>
+5. <b>Open a Pull Request</b>
 
-- [Thirdweb](https://thirdweb.com) for the amazing Web3 development tools
-- [Ethereum Foundation](https://ethereum.org) for the blockchain infrastructure
+> <b>Guidelines:</b> Follow code style, add tests, update docs, ensure all tests pass.
+
+---
+
+# 🐛 Troubleshooting
+
+<details>
+<summary><b>MetaMask Connection Issues</b></summary>
+<ul>
+  <li>Ensure MetaMask is installed and unlocked</li>
+  <li>Check you're on Localhost 8545</li>
+  <li>Refresh the page if needed</li>
+</ul>
+</details>
+
+<details>
+<summary><b>Contract Deployment Issues</b></summary>
+<ul>
+  <li>Check ETH balance for gas</li>
+  <li>Wallet must be on Localhost 8545</li>
+  <li>Install all dependencies</li>
+</ul>
+</details>
+
+<details>
+<summary><b>Transaction Failures</b></summary>
+<ul>
+  <li>Check ETH balance</li>
+  <li>Verify gas fees</li>
+  <li>Ensure correct network</li>
+</ul>
+</details>
+
+---
+
+# 📄 License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+# 🙏 Acknowledgments
+
+- [Thirdweb](https://thirdweb.com) for Web3 tools
+- [Ethereum Foundation](https://ethereum.org) for blockchain infra
 - [MetaMask](https://metamask.io) for wallet integration
-- [Tailwind CSS](https://tailwindcss.com) for the beautiful UI components
+- [Tailwind CSS](https://tailwindcss.com) for UI
 
 ---
 
-**Built with ❤️ by the RaiseOnChain Team**
 
-- Rasad Regmi - Lead Developer (Frontend & Blockchain)
-- Sahira Maharjan - Frontend Developer
-- Regish Shrestha - Blockchain Developer
-- Aditya Thakuri - Researcher & UI/UX Designer
 
 
