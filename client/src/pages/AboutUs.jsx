@@ -1,4 +1,8 @@
 import { Link } from 'react-router-dom';
+import rasadImg from '../assets/rasad.jpg';
+import sahiraImg from '../assets/sahira.png';
+import regishImg from '../assets/regish.png';
+import adityaImg from '../assets/aditya.png';
 
 const AboutUs = () => {
   const teamMembers = [
@@ -6,25 +10,25 @@ const AboutUs = () => {
       name: 'Rasad Regmi',
       role: 'Lead Developer (Frontend & Blockchain)',
       description: 'Lead developer specializing in both frontend and blockchain development for decentralized applications.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
+      image: rasadImg
     },
     {
       name: 'Sahira Maharjan',
       role: 'Frontend Developer',
       description: 'Frontend developer focused on building modern, user-friendly interfaces.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face'
+      image: sahiraImg
     },
     {
       name: 'Regish Shrestha',
       role: 'Blockchain Developer',
       description: 'Smart contract specialist with deep knowledge of Ethereum and DeFi protocols.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
+      image: regishImg
     },
     {
       name: 'Aditya Thakuri',
       role: 'Researcher & UI/UX Designer',
       description: 'Researcher and UI/UX designer focused on blockchain technology and user experience.',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face'
+      image: adityaImg
     }
   ];
 
