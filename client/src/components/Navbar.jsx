@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import logoImage from '../assets/raiseonchain_logo.png'
+import { useWeb3 } from '../contexts/Web3Context'
 
 const Navbar = () => {
+  const { isConnected, connectWallet, walletAddress, formatAddress } = useWeb3();
+
   return (
     <div className="w-[calc(100%-30px)] mx-auto bg-white rounded-b-[30px]" style={{ 
       boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -5px rgba(0, 0, 0, 0.04)'
@@ -38,15 +41,19 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <button className="text-gray-700 hover:text-gray-900 text-sm font-medium px-4 py-2 rounded-md transition-colors">
-              Sign In
-            </button>
             <Link 
               to="/start-campaign" 
               className="bg-black text-white text-sm font-medium px-6 py-2 rounded-md hover:bg-gray-800 transition-colors"
             >
               Start a Campaign
             </Link>
+            <button
+              onClick={connectWallet}
+              className={`ml-2 px-5 py-2 rounded-md text-sm font-medium border transition-colors ${isConnected ? 'bg-green-100 text-green-800 border-green-300 cursor-default' : 'bg-blue-700 text-white border-blue-700 hover:bg-blue-800'}`}
+              disabled={isConnected}
+            >
+              {isConnected && walletAddress ? formatAddress(walletAddress) : 'Connect Wallet'}
+            </button>
           </div>
 
           <div className="md:hidden">

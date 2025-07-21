@@ -1,5 +1,36 @@
 {
+  "name": "raiseonchain",
+  "version": "1.0.0",
+  "description": "Decentralized crowdfunding platform built on Ethereum",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "node deploy.js",
+    "deploy:contract": "npx thirdweb deploy",
+    "build": "cd client && npm run build",
+    "dev": "cd client && npm run dev",
+    "install:all": "npm install && cd client && npm install"
+  },
   "dependencies": {
-    "@thirdweb-dev/cli": "^0.6.15"
+    "@openzeppelin/contracts": "^5.4.0",
+    "@thirdweb-dev/cli": "^0.6.15",
+    "@thirdweb-dev/contracts": "^3.15.0",
+    "@thirdweb-dev/sdk": "^4.0.99",
+    "thirdweb": "^5"
+  },
+  "keywords": [
+    "blockchain",
+    "crowdfunding",
+    "ethereum",
+    "solidity",
+    "react",
+    "web3"
+  ],
+  "author": "RaiseOnChain Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "dotenv": "^17.2.0",
+    "ethers": "^5.8.0",
+    "hardhat": "^2.26.0"
   }
 }

@@ -1,20 +1,22 @@
 import { Button } from "@/components/ui/button"
 import FundraisingProgress from "./progressBar"
+import raiseonchainLogo from "../assets/raiseonchain_logo.png"
 
-export default function CampaignDetail({ campaign }) {
+export default function CampaignDetail({ campaign, onDonate, showWithdrawButton, onWithdraw }) {
   const handleDonate = () => {
-    // TODO: Implement donation functionality
+    if (onDonate) {
+      onDonate();
+    }
   }
 
   const handleShare = () => {
-    // TODO: Implement share functionality
   }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
       <div className="bg-white p-4 rounded-lg">
         <img
-          src={campaign.image || "/placeholder.svg"}
+          src={campaign.image || raiseonchainLogo}
           alt={campaign.title}
           className="w-full h-auto object-cover rounded"
           style={{ maxHeight:"600px" }}
@@ -46,6 +48,11 @@ export default function CampaignDetail({ campaign }) {
           <Button className="flex-1 bg-gray-800 hover:bg-blue-700 text-white py-3" onClick={handleDonate}>
             Donate Now
           </Button>
+          {showWithdrawButton && (
+            <Button className="flex-1 bg-green-700 hover:bg-green-800 text-white py-3" onClick={onWithdraw}>
+              Withdraw
+            </Button>
+          )}
           <Button variant="outline" className="px-6 bg-green-600" onClick={handleShare}>
             Share
           </Button>
