@@ -22,10 +22,10 @@ RaiseOnChain is a **decentralized crowdfunding platform** that empowers users to
 
 ## Team Members
 
-- Rasad Regmi - Lead Developer
-- Sahira Maharjan - UI/UX Designer
+- Rasad Regmi - Lead Developer (Frontend & Blockchain)
+- Sahira Maharjan - Frontend Developer
 - Regish Shrestha - Blockchain Developer
-- Aditya Thakuri - Product Manager
+- Aditya Thakuri - Researcher & UI/UX Designer
 
 ---
 
@@ -264,9 +264,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ by the RaiseOnChain Team**
 
-- Rasad Regmi - Lead Developer
-- Sahira Maharjan - UI/UX Designer
+- Rasad Regmi - Lead Developer (Frontend & Blockchain)
+- Sahira Maharjan - Frontend Developer
 - Regish Shrestha - Blockchain Developer
-- Aditya Thakuri - Product Manager
+- Aditya Thakuri - Researcher & UI/UX Designer
 
 
