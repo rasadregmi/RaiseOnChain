@@ -15,7 +15,7 @@ export default function CampaignCard({campaign, onViewDetails}) {
     <Card className="bg-white hover:shadow-lg transition-shadow">
       <CardContent className="p-0">
         <div className="relative">
-          <img src={image || "/placeholder.svg"} alt={title} className="w-full h-48 object-cover rounded-t-lg" />
+          <img src={image || require("../assets/raiseonchain_logo.png")} alt={title} className="w-full h-48 object-cover rounded-t-lg" />
         </div>
 
         <div className="p-4 space-y-3">
