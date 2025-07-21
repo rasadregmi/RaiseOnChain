@@ -10,6 +10,12 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+coverage/
+
+# Static export (Next.js or similar)
+.next/
+out/
+
 *.local
 
 # Editor directories and files
@@ -25,3 +31,8 @@ dist-ssr
 
 # secrets
 .env
+.env.local
+.env.*
+
+# TypeScript
+*.tsbuildinfo
