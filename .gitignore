@@ -1,2 +1,26 @@
+# Node
+node_modules/
 
-node_modules
+# Env
+.env
+.env.local
+.env.*
+
+# Hardhat
+artifacts/
+cache/
+
+# Logs
+*.log
+logs/
+
+# Build
+coverage/
+dist/
+
+# macOS
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+
