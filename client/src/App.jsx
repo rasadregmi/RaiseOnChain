@@ -6,8 +6,14 @@ import NewCampaign from './pages/NewCampaign';
 import Campaigns from './pages/Campaigns';
 import AboutUs from './pages/AboutUs';
 import HowItWorks from './pages/HowItWorks';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const App = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [location.pathname]);
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
