@@ -3,6 +3,7 @@ import rasadImg from '../assets/rasad.jpg';
 import sahiraImg from '../assets/sahira.png';
 import regishImg from '../assets/regish.png';
 import adityaImg from '../assets/aditya.png';
+import Footer from '../components/ui/footer';
 
 const AboutUs = () => {
   const teamMembers = [
@@ -36,10 +37,10 @@ const AboutUs = () => {
     <div className="w-full px-4 sm:px-6 lg:px-8 py-8 pb-12">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 text-black leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 text-primary leading-tight">
             About RaiseOnChain
           </h1>
-          <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             We're building the future of decentralized crowdfunding, where transparency, 
             trust, and community come together on the blockchain.
           </p>
@@ -48,13 +49,13 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div>
             <h2 className="text-3xl font-bold text-black mb-6">Our Mission</h2>
-            <p className="text-lg text-[#4a5568] mb-6 leading-relaxed">
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               RaiseOnChain is revolutionizing crowdfunding by leveraging blockchain technology 
               to create a transparent, secure, and efficient platform for raising funds. 
               We believe that everyone should have access to fair and transparent fundraising 
               opportunities.
             </p>
-            <p className="text-lg text-[#4a5568] mb-6 leading-relaxed">
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               By eliminating centralized intermediaries and putting control back in the hands 
               of creators and donors, we're building a more equitable financial ecosystem 
               that benefits everyone.
@@ -62,27 +63,27 @@ const AboutUs = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/campaigns" 
-                className="px-8 py-4 bg-black text-white rounded-lg text-lg font-medium hover:bg-gray-800 transition-colors text-center"
+                className="px-8 py-4 bg-primary text-white rounded-full text-lg font-bold shadow hover:bg-primary/90 transition-colors text-center"
               >
                 Explore Campaigns
               </Link>
               <Link 
                 to="/how-it-works" 
-                className="px-8 py-4 bg-[#e8e8e8] text-black rounded-lg text-lg font-medium hover:bg-gray-200 transition-colors text-center"
+                className="px-8 py-4 bg-white text-primary border-2 border-primary rounded-full text-lg font-bold shadow hover:bg-primary/10 transition-colors text-center"
               >
                 Learn How It Works
               </Link>
             </div>
           </div>
-          <div className="bg-[#e6fce6] rounded-[30px] p-8 flex items-center justify-center">
+          <div className="bg-primary/10 rounded-[2rem] p-8 flex items-center justify-center">
             <div className="text-center">
-              <div className="w-24 h-24 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-black mb-4">Decentralized & Transparent</h3>
-              <p className="text-[#4a5568]">
+              <p className="text-gray-700">
                 Every transaction is recorded on the blockchain, ensuring complete transparency 
                 and trust for all participants.
               </p>
@@ -215,6 +216,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
