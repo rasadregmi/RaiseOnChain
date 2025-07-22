@@ -148,7 +148,7 @@ export default function ProductDetailPage() {
                       <div className="space-y-2">
                         <div className="flex justify-between text-sm">
                           <span className="text-gray-500">Raised</span>
-                          <span className="font-medium">{relatedCampaign.raised} SEP</span>
+                          <span className="font-medium">{relatedCampaign.raised} ETH</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div 
@@ -157,7 +157,7 @@ export default function ProductDetailPage() {
                           ></div>
                         </div>
                         <div className="flex justify-between text-xs text-gray-500">
-                          <span>Goal: {relatedCampaign.goal} SEP</span>
+                          <span>Goal: {relatedCampaign.goal} ETH</span>
                           <span>{relatedCampaign.totalDonors} donors</span>
                         </div>
                       </div>
