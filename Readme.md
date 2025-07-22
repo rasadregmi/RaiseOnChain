@@ -27,7 +27,6 @@
 - 📈 <b>Real-time Progress Tracking</b>: Live funding and donor activity
 - 🦊 <b>Wallet Integration</b>: Seamless MetaMask/Web3 support
 - 🤝 <b>Trustless Interactions</b>: Smart contracts manage all funds
-- 🔍 <b>Campaign Discovery</b>: Explore live campaigns
 - 🧾 <b>Donor Transparency</b>: Public donor lists and histories
 - 🛡️ <b>Smart Contract Security</b>: Automated, no human intervention
 - 🌍 <b>Global Accessibility</b>: No borders, no central control
@@ -59,7 +58,7 @@
 - Modern, responsive UI
 
 ## 🗄️ Storage & Deployment
-- <b>IPFS</b> for decentralized file storage
+- <b>All campaign data and images are stored on-chain or locally.</b>
 - <b>Blockchain</b> for all data/transactions (Localhost 8545)
 
 ---
@@ -182,7 +181,7 @@ RaiseOnChain/
 | <b>Styling</b>       | Tailwind CSS             |
 | <b>Web3 Integration</b> | Thirdweb SDK           |
 | <b>Wallet Support</b> | MetaMask                |
-| <b>Storage</b>       | IPFS (Decentralized)     |
+| <b>Storage</b>       | On-chain / Local         |
 
 ---
 
