@@ -45,15 +45,15 @@ export default function CampaignDetail({ campaign, onDonate, showWithdrawButton,
         )}
 
         <div className="flex gap-3 mb-4">
-          <Button className="flex-1 bg-gray-800 hover:bg-blue-700 text-white py-3" onClick={handleDonate}>
+          <Button className="flex-1 bg-gray-800 hover:bg-blue-700 text-white" size="sm" onClick={handleDonate}>
             Donate Now
           </Button>
           {showWithdrawButton && (
-            <Button className="flex-1 bg-green-700 hover:bg-green-800 text-white py-3" onClick={onWithdraw}>
+            <Button className="flex-1 bg-green-700 hover:bg-green-800 text-white" size="sm" onClick={onWithdraw}>
               Withdraw
             </Button>
           )}
-          <Button variant="outline" className="px-6 bg-green-600" onClick={handleShare}>
+          <Button variant="outline" className="bg-green-600" size="sm" onClick={handleShare}>
             Share
           </Button>
         </div>
