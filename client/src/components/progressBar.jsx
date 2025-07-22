@@ -14,7 +14,7 @@ export default function FundraisingProgress({
   return (
     <div className="space-y-4">
       <div className="text-lg font-semibold text-gray-900">
-        <span className="text-green-700 font-bold">${raised}</span> raised out of <span className="font-bold">${goal}</span>
+        <span className="text-green-700 font-bold">{raised} ETH</span> raised out of <span className="font-bold">{goal} ETH</span>
       </div>
 
       <Progress value={progressPercentage} className="h-2" />
