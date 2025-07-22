@@ -43,10 +43,10 @@ export default function CampaignCard({campaign, onViewDetails}) {
           </div>
 
           <div className="flex gap-2 pt-2">
-            <Button variant="outline" size="sm" className="flex-1 text-xs bg-gray-800 " onClick={handleViewDetails}>
+            <Button variant="outline" size="sm" className="flex-1 bg-gray-800" onClick={handleViewDetails}>
               View Details
             </Button>
-            <Button size="sm" className="flex-1 bg-green-600 hover:bg-blue-700 text-xs">
+            <Button size="sm" className="flex-1 bg-green-600 hover:bg-blue-700" >
               Donate
             </Button>
           </div>
