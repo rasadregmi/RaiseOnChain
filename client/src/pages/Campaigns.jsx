@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import DonationModal from '../components/DonationModal';
 import { getAllCampaigns } from '../services/contractService';
+import { Card, CardContent } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Progress } from '../components/ui/progress';
+import Footer from '../components/ui/footer';
 
 const Campaigns = () => {
   const [campaigns, setCampaigns] = useState([]);
@@ -100,7 +104,7 @@ const Campaigns = () => {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-black mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-lg text-gray-600">Loading campaigns...</p>
         </div>
       </div>
@@ -112,15 +116,15 @@ const Campaigns = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 py-8 pb-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-black mb-6 text-black leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-black mb-6 text-primary leading-tight">
               Discover Campaigns
             </h1>
-            <p className="text-lg text-[#4a5568] max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
               Support meaningful projects and bring real change through community-driven funding.
             </p>
-            <Link 
-              to="/new-campaign" 
-              className="inline-flex items-center px-8 py-4 bg-black text-white rounded-lg text-lg font-medium hover:bg-gray-800 transition-colors"
+            <Link
+              to="/new-campaign"
+              className="inline-flex items-center px-8 py-4 bg-black text-white rounded-full text-lg font-bold shadow-lg hover:bg-gray-900 transition-colors"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -129,7 +133,7 @@ const Campaigns = () => {
             </Link>
           </div>
 
-          <div className="bg-white rounded-[20px] p-6 mb-8 shadow-sm">
+          <div className="bg-white rounded-[2rem] p-6 mb-8 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="md:col-span-2">
                 <input
@@ -184,23 +188,16 @@ const Campaigns = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No campaigns found</h3>
               <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria.</p>
-              <button
-                onClick={() => {
-                  setSearchTerm('');
-                  setSelectedCategory('');
-                  setSortBy('newest');
-                }}
-                className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-              >
+              <Button onClick={() => { setSearchTerm(''); setSelectedCategory(''); setSortBy('newest'); }} variant="primary" size="sm">
                 Clear Filters
-              </button>
+              </Button>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredCampaigns.map((campaign) => {
                 const progressPercentage = (campaign.raised / campaign.goal) * 100;
                 return (
-                  <div key={campaign.id} className="bg-white rounded-[20px] shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <Card key={campaign.id} className="overflow-hidden hover:shadow-2xl transition-shadow">
                     <div className="relative h-48 bg-gray-200">
                       <img
                         src={campaign.imageUrl || 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop'}
@@ -208,62 +205,51 @@ const Campaigns = () => {
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-black bg-opacity-75 text-white text-sm rounded-full">
+                        <span className="px-3 py-1 bg-primary text-white text-xs rounded-full shadow">
                           {getCategoryLabel(campaign.category)}
                         </span>
                       </div>
                     </div>
-
-                    <div className="p-6">
+                    <CardContent>
                       <h3 className="text-xl font-bold text-black mb-2 line-clamp-2">
                         {campaign.title}
                       </h3>
                       <p className="text-gray-600 mb-4 line-clamp-3">
                         {campaign.description}
                       </p>
-
                       <div className="mb-4">
                         <div className="flex justify-between text-sm mb-2">
                           <span className="text-gray-600">
-                            {campaign.raised.toFixed(1)} SEP raised
+                            {campaign.raised.toFixed(1)} ETH raised
                           </span>
                           <span className="text-gray-600">
                             {progressPercentage.toFixed(1)}%
                           </span>
                         </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            className={`h-2 rounded-full ${getProgressColor(progressPercentage)}`}
-                            style={{ width: `${Math.min(progressPercentage, 100)}%` }}
-                          ></div>
-                        </div>
+                        <Progress value={progressPercentage} className="mb-1" />
                         <div className="flex justify-between text-sm mt-1">
-                          <span className="text-gray-500">Goal: {campaign.goal} SEP</span>
+                          <span className="text-gray-500">Goal: {campaign.goal} ETH</span>
                           <span className="text-gray-500">{campaign.totalDonors || 0} donors</span>
                         </div>
                       </div>
-
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 gap-2">
                         <div className="text-sm text-gray-500">
                           <span>Creator: {formatAddress(campaign.creator)}</span>
                         </div>
                         <div className="flex gap-2">
                           <Link
                             to={`/campaign/${campaign.id}`}
-                            className="px-4 py-2 bg-[#e8e8e8] text-black rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
+                            className="px-4 py-2 bg-primary text-white rounded-full text-sm font-bold shadow hover:bg-primary/90 transition-colors"
                           >
                             View Details
                           </Link>
-                          <button
-                            onClick={() => handleDonateClick(campaign)}
-                            className="px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
-                          >
+                          <Button onClick={() => handleDonateClick(campaign)} variant="secondary" size="sm">
                             Donate
-                          </button>
+                          </Button>
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
                 );
               })}
             </div>
@@ -286,6 +272,7 @@ const Campaigns = () => {
           onClose={handleCloseDonationModal}
         />
       )}
+      <Footer />
     </>
   );
 };
