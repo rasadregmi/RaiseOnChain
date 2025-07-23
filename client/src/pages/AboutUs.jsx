@@ -53,7 +53,7 @@ const AboutUs = () => {
               RaiseOnChain is revolutionizing crowdfunding by leveraging blockchain technology 
               to create a transparent, secure, and efficient platform for raising funds. 
               We believe that everyone should have access to fair and transparent fundraising 
-              opportunities.
+              opportunities. You can use RaiseOnChain on both Localhost 8545 (local blockchain) and Sepolia (public Ethereum testnet).
             </p>
             <p className="text-base text-gray-700 mb-3 leading-relaxed">
               By eliminating centralized intermediaries and putting control back in the hands 
@@ -162,7 +162,7 @@ const AboutUs = () => {
                 </svg>
               </div>
               <h3 className="font-bold text-black mb-1 text-sm">Blockchain</h3>
-              <p className="text-xs text-[#4a5568]">Ethereum (Localhost 8545)</p>
+              <p className="text-xs text-[#4a5568]">Ethereum (Localhost 8545 or Sepolia)</p>
             </div>
             <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
               <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-2">
