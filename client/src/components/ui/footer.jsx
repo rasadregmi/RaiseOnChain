@@ -29,18 +29,19 @@ const Footer = () => (
         <nav className="flex flex-col gap-2 text-sm font-medium">
           <Link to="/start-campaign" className="text-muted-foreground hover:text-emerald-500 transition-colors">Start a Campaign</Link>
           <Link to="/campaigns" className="text-muted-foreground hover:text-emerald-500 transition-colors">Donate</Link>
-          <a href="mailto:info@raiseonchain.com" className="text-muted-foreground hover:text-emerald-500 transition-colors">Contact Us</a>
+          <Link to="/terms" className="text-muted-foreground hover:text-emerald-500 transition-colors">Terms of Service</Link>
+          <Link to="/privacy" className="text-muted-foreground hover:text-emerald-500 transition-colors">Privacy Policy</Link>
+          <Link to="/guidelines" className="text-muted-foreground hover:text-emerald-500 transition-colors">Community Guidelines</Link>
         </nav>
       </div>
       {/* Social/Contact */}
       <div>
         <h4 className="text-base font-bold mb-2 text-foreground">Connect</h4>
-        <div className="flex gap-2 mb-2">
-          <a href="#" className="text-emerald-500 hover:text-emerald-700" aria-label="Twitter"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 19c11 0 13-9 13-13v-.6A9.3 9.3 0 0023 3a9.1 9.1 0 01-2.6.7A4.5 4.5 0 0022.4.4a9.1 9.1 0 01-2.9 1.1A4.5 4.5 0 0012 7.5c0 .4 0 .8.1 1.2A12.8 12.8 0 013 2.1a4.5 4.5 0 001.4 6A4.5 4.5 0 012 7.1v.1a4.5 4.5 0 003.6 4.4 4.5 4.5 0 01-2 .1 4.5 4.5 0 004.2 3.1A9 9 0 012 18.6a12.7 12.7 0 006.9 2" /></svg></a>
-          <a href="#" className="text-emerald-500 hover:text-emerald-700" aria-label="LinkedIn"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8a6 6 0 016 6v5a2 2 0 01-2 2H4a2 2 0 01-2-2v-5a6 6 0 016-6h8z" /><circle cx="8.5" cy="13.5" r="1.5" /><circle cx="15.5" cy="13.5" r="1.5" /></svg></a>
-          <a href="#" className="text-emerald-500 hover:text-emerald-700" aria-label="Email"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0V8a4 4 0 018 0v4" /></svg></a>
+        <div className="flex flex-col gap-2 mb-2">
+          <div className="text-sm font-semibold text-emerald-700">Lead Developer: Rasad Regmi</div>
+          <span className="text-xs text-muted-foreground">You can contact him at: <a href="mailto:regmirasad53@gmail.com" className="underline hover:text-emerald-700">regmirasad53@gmail.com</a></span>
+          <span className="text-xs text-muted-foreground">Portfolio: <a href="https://www.rasadregmi.com.np/" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-700">rasadregmi.com.np</a></span>
         </div>
-        <div className="text-xs text-muted-foreground">info@raiseonchain.com</div>
         <div className="text-[10px] text-muted-foreground mt-2">&copy; {new Date().getFullYear()} RaiseOnChain. All rights reserved.</div>
       </div>
     </div>

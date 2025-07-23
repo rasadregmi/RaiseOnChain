@@ -6,6 +6,9 @@ import NewCampaign from './pages/NewCampaign';
 import Campaigns from './pages/Campaigns';
 import AboutUs from './pages/AboutUs';
 import HowItWorks from './pages/HowItWorks';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import Guidelines from './pages/Guidelines';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -27,6 +30,9 @@ const App = () => {
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/start-campaign" element={<NewCampaign />} />
           <Route path="/new-campaign" element={<NewCampaign />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/guidelines" element={<Guidelines />} />
         </Routes>
       </div>
     </div>
