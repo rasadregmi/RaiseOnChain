@@ -58,14 +58,14 @@
 - Modern, responsive UI
 
 ## 🗄️ Storage & Deployment
-- <b>All campaign data and images are stored on-chain or locally.</b>
-- <b>Blockchain</b> for all data/transactions (Localhost 8545)
+- **All campaign data and images are stored on-chain or locally.**
+- **Blockchain** for all data/transactions (Localhost 8545 or Sepolia)
 
 ---
 
 # 🚀 Quick Start
 
-> <b>Requirements:</b> Node.js (v18+), MetaMask, Git, Hardhat (Localhost 8545)
+> **Requirements:** Node.js (v18+), MetaMask, Git, Hardhat (Localhost 8545 or Sepolia)
 
 ```bash
 # 1. Clone the repository
@@ -79,14 +79,17 @@ cd client && npm install
 # 3. Start Hardhat node (new terminal)
 npx hardhat node
 
-# 4. Deploy smart contract
+# 4. Deploy smart contract (choose network)
+# For localhost:
 npx hardhat run scripts/deploy.js --network localhost
+# For Sepolia:
+npx hardhat run scripts/deploy.js --network sepolia
 
 # 5. Start frontend (in client/)
 npm run dev
 ```
 
-> 💡 <b>Tip:</b> After deploying, update the contract address in <code>client/src/services/contractService.js</code>.
+> 💡 **Tip:** After deploying, update the contract address in `client/.env` and `client/src/services/contractService.js` for the correct network.
 
 ---
 
@@ -124,8 +127,8 @@ RaiseOnChain/
 <details>
 <summary><b>2. Connect Your Wallet</b></summary>
 <ul>
-  <li>Connect MetaMask to Localhost 8545.</li>
-  <li>Use pre-funded Hardhat accounts.</li>
+  <li>Connect MetaMask to Localhost 8545 or Sepolia.</li>
+  <li>Use pre-funded Hardhat accounts (localhost) or Sepolia faucet ETH.</li>
 </ul>
 </details>
 
@@ -140,7 +143,7 @@ RaiseOnChain/
 <details>
 <summary><b>4. Funds Released</b></summary>
 <ul>
-  <li>Funds are released automatically by smart contracts when goals are met or deadlines pass.</li>
+  <li>Funds can be withdrawn by the beneficiary when the campaign goal is met or the deadline passes.</li>
 </ul>
 </details>
 
@@ -175,7 +178,7 @@ RaiseOnChain/
 
 | Component         | Technology                |
 |-------------------|--------------------------|
-| <b>Blockchain</b>    | Ethereum (Localhost 8545) |
+| **Blockchain**    | Ethereum (Localhost 8545 or Sepolia) |
 | <b>Smart Contracts</b> | Solidity, Thirdweb      |
 | <b>Frontend</b>      | React.js, Vite           |
 | <b>Styling</b>       | Tailwind CSS             |
@@ -208,7 +211,7 @@ We welcome contributions from the community!
 <summary><b>MetaMask Connection Issues</b></summary>
 <ul>
   <li>Ensure MetaMask is installed and unlocked</li>
-  <li>Check you're on Localhost 8545</li>
+  <li>Check you're on Localhost 8545 or Sepolia</li>
   <li>Refresh the page if needed</li>
 </ul>
 </details>
@@ -217,7 +220,7 @@ We welcome contributions from the community!
 <summary><b>Contract Deployment Issues</b></summary>
 <ul>
   <li>Check ETH balance for gas</li>
-  <li>Wallet must be on Localhost 8545</li>
+  <li>Wallet must be on Localhost 8545 or Sepolia</li>
   <li>Install all dependencies</li>
 </ul>
 </details>
