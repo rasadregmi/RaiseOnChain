@@ -113,33 +113,33 @@ const HowItWorks = () => {
     <>
       <div className="w-full px-4 sm:px-6 lg:px-8 py-8 pb-12">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 text-primary leading-tight">
+          <div className="text-center mb-8">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-4 text-primary leading-tight">
               How RaiseOnChain Works
             </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-700 max-w-2xl mx-auto leading-relaxed">
               Discover how blockchain technology is revolutionizing crowdfunding through transparency, security, and community-driven funding.
             </p>
           </div>
 
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-black text-center mb-12">The Process</h2>
-            <div className="space-y-12">
+          <div className="mb-10">
+            <h2 className="text-xl font-bold text-black text-center mb-6">The Process</h2>
+            <div className="space-y-6">
               {steps.map((step, index) => (
                 <div key={index} className={`flex flex-col lg:flex-row gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                   <div className="lg:w-1/2">
-                    <div className="bg-primary/10 rounded-[30px] p-8 h-full flex items-center justify-center">
+                    <div className="bg-primary/10 rounded-2xl p-4 h-full flex items-center justify-center">
                       <div className="text-center">
-                        <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-                          <span className="text-white text-2xl font-bold">{step.number}</span>
+                        <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-3">
+                          <span className="text-white text-base font-bold">{step.number}</span>
                         </div>
-                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto mb-2">
                           <div className="text-black">
                             {step.icon}
                           </div>
                         </div>
-                        <h3 className="text-2xl font-bold text-black mb-4">{step.title}</h3>
-                        <p className="text-[#4a5568] leading-relaxed">
+                        <h3 className="text-lg font-bold text-black mb-2">{step.title}</h3>
+                        <p className="text-[#4a5568] text-sm leading-relaxed">
                           {step.description}
                         </p>
                       </div>
@@ -154,7 +154,7 @@ const HowItWorks = () => {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                           </div>
-                          <p className="text-[#4a5568]">{detail}</p>
+                          <p className="text-[#4a5568] text-xs">{detail}</p>
                         </div>
                       ))}
                     </div>
@@ -164,18 +164,18 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-black text-center mb-12">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mb-10">
+            <h2 className="text-xl font-bold text-black text-center mb-6">Key Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {features.map((feature, index) => (
-                <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-gray-100 text-center">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div key={index} className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 text-center">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
                     <div className="text-green-600">
                       {feature.icon}
                     </div>
                   </div>
-                  <h3 className="font-bold text-black mb-2">{feature.title}</h3>
-                  <p className="text-sm text-[#4a5568]">
+                  <h3 className="font-bold text-black mb-1 text-sm">{feature.title}</h3>
+                  <p className="text-xs text-[#4a5568]">
                     {feature.description}
                   </p>
                 </div>
@@ -183,19 +183,19 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-black text-center mb-12">Why Blockchain?</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="mb-10">
+            <h2 className="text-xl font-bold text-black text-center mb-6">Why Blockchain?</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-2xl font-bold text-black mb-6">Traditional Crowdfunding Issues</h3>
-                <div className="space-y-4">
+                <h3 className="text-lg font-bold text-black mb-3">Traditional Crowdfunding Issues</h3>
+                <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg className="w-3 h-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
-                    <p className="text-[#4a5568]">High platform fees (5-10% of funds raised)</p>
+                    <p className="text-[#4a5568] text-xs">High platform fees (5-10% of funds raised)</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -203,7 +203,7 @@ const HowItWorks = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
-                    <p className="text-[#4a5568]">Lack of transparency in fund usage</p>
+                    <p className="text-[#4a5568] text-xs">Lack of transparency in fund usage</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -211,7 +211,7 @@ const HowItWorks = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
-                    <p className="text-[#4a5568]">Centralized control and censorship</p>
+                    <p className="text-[#4a5568] text-xs">Centralized control and censorship</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -219,20 +219,20 @@ const HowItWorks = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
-                    <p className="text-[#4a5568]">Geographic restrictions and limitations</p>
+                    <p className="text-[#4a5568] text-xs">Geographic restrictions and limitations</p>
                   </div>
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-black mb-6">RaiseOnChain Solutions</h3>
-                <div className="space-y-4">
+                <h3 className="text-lg font-bold text-black mb-3">RaiseOnChain Solutions</h3>
+                <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <p className="text-[#4a5568]">Minimal gas fees only (no platform fees)</p>
+                    <p className="text-[#4a5568] text-xs">Minimal gas fees only (no platform fees)</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -240,7 +240,7 @@ const HowItWorks = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <p className="text-[#4a5568]">Complete transparency with public blockchain records</p>
+                    <p className="text-[#4a5568] text-xs">Complete transparency with public blockchain records</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -248,7 +248,7 @@ const HowItWorks = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <p className="text-[#4a5568]">Decentralized and censorship-resistant</p>
+                    <p className="text-[#4a5568] text-xs">Decentralized and censorship-resistant</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -256,60 +256,60 @@ const HowItWorks = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <p className="text-[#4a5568]">Global accessibility with no restrictions</p>
+                    <p className="text-[#4a5568] text-xs">Global accessibility with no restrictions</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-black text-center mb-12">Getting Started</h2>
-            <div className="bg-primary/10 rounded-[30px] p-12">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mb-10">
+            <h2 className="text-xl font-bold text-black text-center mb-6">Getting Started</h2>
+            <div className="bg-primary/10 rounded-2xl p-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-3">1. Install MetaMask</h3>
-                  <p className="text-[#4a5568] mb-4">
+                  <h3 className="text-base font-bold text-black mb-1">1. Install MetaMask</h3>
+                  <p className="text-[#4a5568] mb-2 text-xs">
                     Download and install the MetaMask browser extension
                   </p>
                   <a 
                     href="https://metamask.io" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-green-600 hover:text-green-700 font-medium"
+                    className="text-green-600 hover:text-green-700 font-medium text-xs"
                   >
                     Get MetaMask →
                   </a>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-3">2. Get Test ETH</h3>
-                  <p className="text-[#4a5568] mb-4">
+                  <h3 className="text-base font-bold text-black mb-1">2. Get Test ETH</h3>
+                  <p className="text-[#4a5568] mb-2 text-xs">
                     You already have test ETH in your Localhost 8545 accounts (provided by Hardhat node).
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-3">3. Start Campaign</h3>
-                  <p className="text-[#4a5568] mb-4">
+                  <h3 className="text-base font-bold text-black mb-1">3. Start Campaign</h3>
+                  <p className="text-[#4a5568] mb-2 text-xs">
                     Create your first campaign or donate to existing ones
                   </p>
                   <Link 
                     to="/new-campaign" 
-                    className="text-green-600 hover:text-green-700 font-medium"
+                    className="text-green-600 hover:text-green-700 font-medium text-xs"
                   >
                     Start Campaign →
                   </Link>
@@ -318,47 +318,47 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-black text-center mb-12">Frequently Asked Questions</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
+          <div className="mb-10">
+            <h2 className="text-xl font-bold text-black text-center mb-6">Frequently Asked Questions</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <div className="space-y-3">
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-2">What is Localhost 8545?</h3>
-                  <p className="text-[#4a5568]">
+                  <h3 className="text-base font-bold text-black mb-1">What is Localhost 8545?</h3>
+                  <p className="text-[#4a5568] text-xs">
                     Localhost 8545 is your local Ethereum blockchain provided by Hardhat. It allows you to test applications instantly and for free, with pre-funded accounts.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-2">How much does it cost to create a campaign?</h3>
-                  <p className="text-[#4a5568]">
+                  <h3 className="text-base font-bold text-black mb-1">How much does it cost to create a campaign?</h3>
+                  <p className="text-[#4a5568] text-xs">
                     Creating a campaign only requires a small amount of ETH for gas fees (which are free and pre-funded on Localhost 8545). There are no platform fees.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-2">Is my donation secure?</h3>
-                  <p className="text-[#4a5568]">
+                  <h3 className="text-base font-bold text-black mb-1">Is my donation secure?</h3>
+                  <p className="text-[#4a5568] text-xs">
                     Yes! All transactions are secured by your local Ethereum blockchain (Hardhat) and smart contracts. No one can access or steal your funds except the intended recipient.
                   </p>
                 </div>
               </div>
-              <div className="space-y-6">
+              <div className="space-y-3">
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-2">Can I see where my money goes?</h3>
-                  <p className="text-[#4a5568]">
+                  <h3 className="text-base font-bold text-black mb-1">Can I see where my money goes?</h3>
+                  <p className="text-[#4a5568] text-xs">
                     Absolutely! All transactions are publicly visible on the blockchain. You can 
                     track every donation and see exactly where funds are sent.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-2">What if a campaign doesn't reach its goal?</h3>
-                  <p className="text-[#4a5568]">
+                  <h3 className="text-base font-bold text-black mb-1">What if a campaign doesn't reach its goal?</h3>
+                  <p className="text-[#4a5568] text-xs">
                     Currently, funds are sent directly to the campaign creator. In future versions, 
                     we'll implement smart contracts that can automatically refund donors if goals aren't met.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-2">Do I need technical knowledge?</h3>
-                  <p className="text-[#4a5568]">
+                  <h3 className="text-base font-bold text-black mb-1">Do I need technical knowledge?</h3>
+                  <p className="text-[#4a5568] text-xs">
                     Not at all! Our platform is designed to be user-friendly. You just need to 
                     install MetaMask and have some basic understanding of how to use it.
                   </p>
@@ -367,21 +367,21 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <div className="bg-black rounded-[30px] p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+          <div className="bg-black rounded-2xl p-6 text-center text-white">
+            <h2 className="text-xl font-bold mb-2">Ready to Get Started?</h2>
+            <p className="text-base text-gray-300 mb-4 max-w-2xl mx-auto">
               Join the future of decentralized crowdfunding and start making a difference today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-2 justify-center">
               <Link 
                 to="/new-campaign" 
-                className="px-8 py-4 bg-white text-black rounded-lg text-lg font-medium hover:bg-gray-100 transition-colors"
+                className="px-4 py-2 bg-white text-black rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
               >
                 Create Campaign
               </Link>
               <Link 
                 to="/campaigns" 
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg text-lg font-medium hover:bg-white hover:text-black transition-colors"
+                className="px-4 py-2 bg-transparent border-2 border-white text-white rounded-lg text-sm font-medium hover:bg-white hover:text-black transition-colors"
               >
                 Browse Campaigns
               </Link>
