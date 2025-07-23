@@ -84,23 +84,23 @@ const Home = () => {
           </svg>
         </div>
         <div className="relative z-10 max-w-5xl mx-auto bg-white/70 backdrop-blur rounded-3xl py-16 sm:py-24 px-4 sm:px-10 lg:px-20 shadow-md flex flex-col items-center text-center border border-gray-100">
-          <h1 className="text-5xl sm:text-6xl font-extrabold mb-6 text-foreground leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 text-foreground leading-tight tracking-tight">
             Crowdfunding, <span className="text-emerald-500">Reimagined</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto font-medium">
+          <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto font-medium">
             Launch meaningful campaigns and bring real change through community-driven support.<br className="hidden sm:inline" />
             <span className="text-emerald-600 font-bold">Transparent. Secure. Decentralized.</span>
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mt-4 w-full">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-2 w-full">
             <Link
               to="/campaigns"
-              className="w-full sm:w-auto px-10 py-4 bg-emerald-500 text-white rounded-full text-lg font-bold hover:bg-emerald-600 transition-colors shadow-none border border-emerald-100"
+              className="w-full sm:w-auto px-4 py-2 bg-emerald-500 text-white rounded-full text-base font-semibold hover:bg-emerald-600 transition-colors shadow-none border border-emerald-100"
             >
               Donate
             </Link>
             <Link
               to="/start-campaign"
-              className="w-full sm:w-auto px-10 py-4 bg-foreground text-white rounded-full text-lg font-bold hover:bg-emerald-700 transition-colors shadow-none border border-gray-200"
+              className="w-full sm:w-auto px-4 py-2 bg-foreground text-white rounded-full text-base font-semibold hover:bg-emerald-700 transition-colors shadow-none border border-gray-200"
             >
               Start a Campaign
             </Link>
@@ -109,65 +109,65 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="w-full max-w-6xl mx-auto mt-24 px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 bg-white/60 rounded-2xl border border-gray-100 py-10 px-4">
+      <section className="w-full max-w-6xl mx-auto mt-12 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white/60 rounded-2xl border border-gray-100 py-6 px-2">
           {features.map((f, i) => (
             <div key={i} className="flex flex-col items-center text-center gap-4">
               <div className="bg-emerald-50 rounded-full p-3 mb-2 border border-emerald-100">
                 {f.icon}
               </div>
-              <h3 className="text-lg font-bold text-foreground">{f.title}</h3>
-              <p className="text-muted-foreground text-base">{f.desc}</p>
+              <h3 className="text-base font-semibold text-foreground">{f.title}</h3>
+              <p className="text-sm text-muted-foreground">{f.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Trusted By Section */}
-      <section className="w-full max-w-6xl mx-auto mt-24 px-4">
-        <div className="bg-white/60 rounded-2xl border border-gray-100 py-10 px-4 flex flex-col items-center">
-          <h2 className="text-xl font-bold mb-6 text-foreground tracking-wide uppercase">Trusted By</h2>
-          <div className="flex flex-wrap justify-center gap-10">
+      <section className="w-full max-w-6xl mx-auto mt-12 px-4">
+        <div className="bg-white/60 rounded-2xl border border-gray-100 py-6 px-2 flex flex-col items-center">
+          <h2 className="text-base font-semibold mb-4 text-foreground tracking-wide uppercase">Trusted By</h2>
+          <div className="flex flex-wrap justify-center gap-6">
             <div className="flex items-center gap-2">
               <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" strokeWidth="2" /></svg>
-              <span className="text-lg font-bold text-emerald-700">Web3 Foundation</span>
+              <span className="text-base font-semibold text-emerald-700">Web3 Foundation</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2" /></svg>
-              <span className="text-lg font-bold text-emerald-700">Crypto Impact</span>
+              <span className="text-base font-semibold text-emerald-700">Crypto Impact</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22" strokeWidth="2" /></svg>
-              <span className="text-lg font-bold text-emerald-700">Open Source DAO</span>
+              <span className="text-base font-semibold text-emerald-700">Open Source DAO</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="w-full max-w-5xl mx-auto mt-24 px-4">
-        <div className="bg-white/60 rounded-2xl border border-gray-100 py-12 px-6 flex flex-col items-center text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-8 text-foreground">How It Works</h2>
-          <ol className="space-y-6 text-lg text-muted-foreground max-w-2xl mx-auto">
+      <section className="w-full max-w-5xl mx-auto mt-12 px-4">
+        <div className="bg-white/60 rounded-2xl border border-gray-100 py-8 px-4 flex flex-col items-center text-center">
+          <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 text-foreground">How It Works</h2>
+          <ol className="space-y-4 text-base text-muted-foreground max-w-2xl mx-auto">
             <li><span className="font-bold text-emerald-600">1.</span> Create your campaign with a clear goal and story.</li>
             <li><span className="font-bold text-emerald-600">2.</span> Connect your wallet and launch on the blockchain.</li>
             <li><span className="font-bold text-emerald-600">3.</span> Share your campaign and receive transparent donations.</li>
             <li><span className="font-bold text-emerald-600">4.</span> Withdraw funds securely when your goal is met.</li>
           </ol>
-          <Link to="/how-it-works" className="mt-8 px-8 py-3 bg-emerald-500 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors text-lg shadow-none border border-emerald-100">Learn More</Link>
+          <Link to="/how-it-works" className="mt-6 px-6 py-2 bg-emerald-500 text-white rounded-full font-semibold hover:bg-emerald-600 transition-colors text-base shadow-none border border-emerald-100">Learn More</Link>
         </div>
       </section>
 
       {/* Call to Action Section */}
-      <section className="w-full max-w-4xl mx-auto mt-24 px-4 mb-32">
-        <div className="bg-emerald-50 rounded-2xl border border-emerald-100 py-12 px-6 flex flex-col items-center text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 text-foreground">Ready to Make a Difference?</h2>
-          <p className="text-lg text-emerald-700 mb-8 max-w-2xl mx-auto">
+      <section className="w-full max-w-4xl mx-auto mt-12 px-4 mb-16">
+        <div className="bg-emerald-50 rounded-2xl border border-emerald-100 py-8 px-4 flex flex-col items-center text-center">
+          <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-foreground">Ready to Make a Difference?</h2>
+          <p className="text-base text-emerald-700 mb-6 max-w-2xl mx-auto">
             Join thousands of users already supporting causes and creating positive change with RaiseOnChain.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center w-full">
-            <Link to="/start-campaign" className="w-full sm:w-auto px-10 py-4 bg-emerald-500 text-white rounded-full text-lg font-bold hover:bg-emerald-600 transition-colors shadow-none border border-emerald-100">Start Your Campaign</Link>
-            <Link to="/campaigns" className="w-full sm:w-auto px-10 py-4 bg-white text-emerald-600 rounded-full text-lg font-bold hover:bg-emerald-50 transition-colors shadow-none border border-emerald-100">Explore Campaigns</Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
+            <Link to="/start-campaign" className="w-full sm:w-auto px-4 py-2 bg-emerald-500 text-white rounded-full text-base font-semibold hover:bg-emerald-600 transition-colors shadow-none border border-emerald-100">Start Your Campaign</Link>
+            <Link to="/campaigns" className="w-full sm:w-auto px-4 py-2 bg-white text-emerald-600 rounded-full text-base font-semibold hover:bg-emerald-50 transition-colors shadow-none border border-emerald-100">Explore Campaigns</Link>
           </div>
         </div>
       </section>
