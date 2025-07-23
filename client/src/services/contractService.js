@@ -4,13 +4,14 @@ import contractAbi from "../../../artifacts/contracts/CrowdfundingCampaign.sol/C
 
 let CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || "";
 const RPC_URL = import.meta.env.VITE_RPC_URL || "http://127.0.0.1:8545";
+const CHAIN_ID = import.meta.env.VITE_CHAIN_ID ? parseInt(import.meta.env.VITE_CHAIN_ID, 16) : 31337;
 
 const getSdk = () => {
   if (typeof window !== "undefined" && window.ethereum) {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     return new ThirdwebSDK(signer, {
-      chainId: 31337,
+      chainId: CHAIN_ID,
       rpc: [RPC_URL],
     });
   }
