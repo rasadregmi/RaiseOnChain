@@ -65,7 +65,7 @@ export default function ProductDetailPage() {
     return labels[category] || category;
   };
 
-  const canWithdraw = campaign && campaign.isFunded && campaign.isActive && walletAddress && (walletAddress.toLowerCase() === campaign.beneficiary.toLowerCase() || walletAddress.toLowerCase() === campaign.creator.toLowerCase());
+  const canWithdraw = campaign && campaign.isFunded && campaign.isActive && walletAddress && (walletAddress.toLowerCase() === campaign.beneficiary.toLowerCase());
 
   const handleWithdraw = async () => {
     setWithdrawing(true);
