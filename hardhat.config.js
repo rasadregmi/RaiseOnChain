@@ -14,5 +14,9 @@ module.exports = {
       url: process.env.LOCALHOST_RPC_URL || "http://127.0.0.1:8545",
       accounts: [process.env.PRIVATE_KEY],
     },
+    sepolia: {
+      url: process.env.SEPOLIA_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY],
+    },
   },
 }; 
