@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className="text-gray-700 hover:text-primary text-base font-semibold transition-colors px-2 py-1 rounded-lg hover:bg-primary/10"
+              className="text-gray-700 hover:text-primary text-sm font-medium transition-colors px-1 py-1 rounded-lg hover:bg-primary/10"
             >
               {link.label}
             </Link>
@@ -33,13 +33,13 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4">
           <Link
             to="/start-campaign"
-            className="bg-primary text-white text-base font-bold px-6 py-2 rounded-full shadow-lg hover:bg-primary/90 transition-colors"
+            className="bg-primary text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-lg hover:bg-primary/90 transition-colors"
           >
             Start a Campaign
           </Link>
           <button
             onClick={connectWallet}
-            className={`ml-2 px-5 py-2 rounded-full text-base font-semibold border-2 transition-colors shadow-sm ${isConnected ? 'bg-green-100 text-green-800 border-green-300 cursor-default' : 'bg-primary text-white border-primary hover:bg-primary/90'}`}
+            className={`ml-2 px-4 py-1.5 rounded-full text-sm font-medium border-2 transition-colors shadow-sm ${isConnected ? 'bg-green-100 text-green-800 border-green-300 cursor-default' : 'bg-primary text-white border-primary hover:bg-primary/90'}`}
             disabled={isConnected}
           >
             {isConnected && walletAddress ? formatAddress(walletAddress) : 'Connect Wallet'}
@@ -66,7 +66,7 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-gray-700 hover:text-primary text-lg font-semibold transition-colors px-2 py-2 rounded-lg hover:bg-primary/10"
+                className="text-gray-700 hover:text-primary text-base font-medium transition-colors px-1 py-1 rounded-lg hover:bg-primary/10"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -74,14 +74,14 @@ const Navbar = () => {
             ))}
             <Link
               to="/start-campaign"
-              className="bg-primary text-white text-lg font-bold px-6 py-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors mt-2 text-center"
+              className="bg-primary text-white text-base font-semibold px-4 py-2 rounded-full shadow-lg hover:bg-primary/90 transition-colors mt-2 text-center"
               onClick={() => setMobileOpen(false)}
             >
               Start a Campaign
             </Link>
             <button
               onClick={() => { connectWallet(); setMobileOpen(false); }}
-              className={`mt-2 px-5 py-3 rounded-full text-lg font-semibold border-2 transition-colors shadow-sm ${isConnected ? 'bg-green-100 text-green-800 border-green-300 cursor-default' : 'bg-primary text-white border-primary hover:bg-primary/90'}`}
+              className={`mt-2 px-4 py-2 rounded-full text-base font-medium border-2 transition-colors shadow-sm ${isConnected ? 'bg-green-100 text-green-800 border-green-300 cursor-default' : 'bg-primary text-white border-primary hover:bg-primary/90'}`}
               disabled={isConnected}
             >
               {isConnected && walletAddress ? formatAddress(walletAddress) : 'Connect Wallet'}
