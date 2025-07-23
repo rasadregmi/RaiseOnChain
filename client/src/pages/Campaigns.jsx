@@ -115,33 +115,33 @@ const Campaigns = () => {
     <>
       <div className="w-full px-4 sm:px-6 lg:px-8 py-8 pb-12">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-black mb-6 text-primary leading-tight">
+          <div className="text-center mb-6">
+            <h1 className="text-2xl sm:text-3xl font-black mb-3 text-primary leading-tight">
               Discover Campaigns
             </h1>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+            <p className="text-base text-gray-700 max-w-xl mx-auto mb-4">
               Support meaningful projects and bring real change through community-driven funding.
             </p>
             <Link
               to="/new-campaign"
-              className="inline-flex items-center px-8 py-4 bg-black text-white rounded-full text-lg font-bold shadow-lg hover:bg-gray-900 transition-colors"
+              className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-semibold shadow hover:bg-gray-900 transition-colors"
             >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
               </svg>
               Start Your Campaign
             </Link>
           </div>
 
-          <div className="bg-white rounded-[2rem] p-6 mb-8 shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="bg-white rounded-2xl p-3 mb-4 shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
               <div className="md:col-span-2">
                 <input
                   type="text"
                   placeholder="Search campaigns..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none"
+                  className="w-full px-2 py-1 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-sm"
                 />
               </div>
 
@@ -149,7 +149,7 @@ const Campaigns = () => {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none"
+                  className="w-full px-2 py-1 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-sm"
                 >
                   <option value="">All Categories</option>
                   <option value="charity">Charity & Non-Profit</option>
@@ -167,7 +167,7 @@ const Campaigns = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none"
+                  className="w-full px-2 py-1 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-sm"
                 >
                   <option value="newest">Newest First</option>
                   <option value="oldest">Oldest First</option>
@@ -193,32 +193,32 @@ const Campaigns = () => {
               </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredCampaigns.map((campaign) => {
                 const progressPercentage = (campaign.raised / campaign.goal) * 100;
                 return (
                   <Card key={campaign.id} className="overflow-hidden hover:shadow-2xl transition-shadow">
-                    <div className="relative h-48 bg-gray-200">
+                    <div className="relative h-32 bg-gray-200">
                       <img
                         src={campaign.imageUrl || 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop'}
                         alt={campaign.title}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-primary text-white text-xs rounded-full shadow">
+                      <div className="absolute top-2 left-2">
+                        <span className="px-2 py-0.5 bg-primary text-white text-xs rounded-full shadow">
                           {getCategoryLabel(campaign.category)}
                         </span>
                       </div>
                     </div>
                     <CardContent>
-                      <h3 className="text-xl font-bold text-black mb-2 line-clamp-2">
+                      <h3 className="text-base font-bold text-black mb-1 line-clamp-2">
                         {campaign.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
+                      <p className="text-xs text-gray-600 mb-2 line-clamp-3">
                         {campaign.description}
                       </p>
-                      <div className="mb-4">
-                        <div className="flex justify-between text-sm mb-2">
+                      <div className="mb-2">
+                        <div className="flex justify-between text-xs mb-1">
                           <span className="text-gray-600">
                             {campaign.raised.toFixed(1)} ETH raised
                           </span>
@@ -227,19 +227,19 @@ const Campaigns = () => {
                           </span>
                         </div>
                         <Progress value={progressPercentage} className="mb-1" />
-                        <div className="flex justify-between text-sm mt-1">
+                        <div className="flex justify-between text-xs mt-1">
                           <span className="text-gray-500">Goal: {campaign.goal} ETH</span>
                           <span className="text-gray-500">{campaign.totalDonors || 0} donors</span>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 gap-2">
-                        <div className="text-sm text-gray-500">
+                      <div className="flex items-center justify-between pt-2 border-t border-gray-100 gap-2">
+                        <div className="text-xs text-gray-500">
                           <span>Creator: {formatAddress(campaign.creator)}</span>
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-1">
                           <Link
                             to={`/campaign/${campaign.id}`}
-                            className="px-4 py-2 bg-primary text-white rounded-full text-sm font-bold shadow hover:bg-primary/90 transition-colors"
+                            className="px-2 py-1 bg-primary text-white rounded-full text-xs font-semibold shadow hover:bg-primary/90 transition-colors"
                           >
                             View Details
                           </Link>
@@ -256,8 +256,8 @@ const Campaigns = () => {
           )}
 
           {filteredCampaigns.length > 0 && filteredCampaigns.length < campaigns.length && (
-            <div className="text-center mt-12">
-              <button className="px-8 py-4 bg-[#e8e8e8] text-black rounded-lg text-lg font-medium hover:bg-gray-200 transition-colors">
+            <div className="text-center mt-6">
+              <button className="px-4 py-2 bg-[#e8e8e8] text-black rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors">
                 Load More Campaigns
               </button>
             </div>
