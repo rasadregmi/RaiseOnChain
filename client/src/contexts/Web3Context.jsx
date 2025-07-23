@@ -3,10 +3,14 @@ import { ethers } from 'ethers';
 
 const Web3Context = createContext();
 
-const LOCALHOST_NETWORK = {
-    chainId: '0x7a69',
-    chainName: 'Hardhat Localhost 8545',
-    rpcUrls: ['http://127.0.0.1:8545'],
+const CHAIN_ID = import.meta.env.VITE_CHAIN_ID || '0x7a69';
+const CHAIN_NAME = import.meta.env.VITE_CHAIN_NAME || 'Hardhat Localhost 8545';
+const RPC_URL = import.meta.env.VITE_RPC_URL || 'http://127.0.0.1:8545';
+
+const NETWORK_CONFIG = {
+    chainId: CHAIN_ID,
+    chainName: CHAIN_NAME,
+    rpcUrls: [RPC_URL],
     nativeCurrency: {
         name: 'ETH',
         symbol: 'ETH',
@@ -43,14 +47,14 @@ export function Web3Provider({ children }) {
     }
 
     function checkCorrectNetwork(chainId) {
-        return chainId === LOCALHOST_NETWORK.chainId;
+        return chainId === NETWORK_CONFIG.chainId;
     }
 
-    async function switchToLocalhost() {
+    async function switchToConfiguredNetwork() {
         if (!window.ethereum) return;
         await window.ethereum.request({
             method: 'wallet_addEthereumChain',
-            params: [LOCALHOST_NETWORK],
+            params: [NETWORK_CONFIG],
         });
     }
 
@@ -134,12 +138,12 @@ export function Web3Provider({ children }) {
                 isCorrectNetwork,
                 currentNetwork,
                 connectWallet,
-                switchToLocalhost,
+                switchToLocalhost: switchToConfiguredNetwork,
                 walletAddress,
                 balance,
                 testBalance,
                 formatAddress,
-                getNetworkName,
+                getNetworkName: () => NETWORK_CONFIG.chainName,
                 fetchBalance,
             }}
         >
