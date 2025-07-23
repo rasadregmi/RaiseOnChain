@@ -13,7 +13,7 @@ const HowItWorks = () => {
         </svg>
       ),
       details: [
-        'Set your funding goal in ETH (Localhost 8545)',
+        'Set your funding goal in ETH (Localhost 8545 or Sepolia)',
         'Add campaign description and images',
         'Choose a category and set deadline',
         'Provide beneficiary wallet address'
@@ -31,7 +31,7 @@ const HowItWorks = () => {
       details: [
         'Install MetaMask browser extension',
         'Connect wallet to RaiseOnChain',
-        'Switch to Localhost 8545',
+        'Switch to Localhost 8545 or Sepolia',
         'Ensure sufficient ETH balance'
       ]
     },
@@ -323,9 +323,9 @@ const HowItWorks = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <div className="space-y-3">
                 <div>
-                  <h3 className="text-base font-bold text-black mb-1">What is Localhost 8545?</h3>
+                  <h3 className="text-base font-bold text-black mb-1">What is Localhost 8545 or Sepolia?</h3>
                   <p className="text-[#4a5568] text-xs">
-                    Localhost 8545 is your local Ethereum blockchain provided by Hardhat. It allows you to test applications instantly and for free, with pre-funded accounts.
+                    Localhost 8545 is your local Ethereum blockchain provided by Hardhat. Sepolia is a public Ethereum testnet. You can use either for testing and deploying campaigns, with pre-funded accounts on localhost or faucet ETH on Sepolia.
                   </p>
                 </div>
                 <div>
@@ -352,8 +352,7 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="text-base font-bold text-black mb-1">What if a campaign doesn't reach its goal?</h3>
                   <p className="text-[#4a5568] text-xs">
-                    Currently, funds are sent directly to the campaign creator. In future versions, 
-                    we'll implement smart contracts that can automatically refund donors if goals aren't met.
+                    Currently, funds can be withdrawn by the beneficiary if the campaign is successful (meets its goal or deadline). In future versions, we'll implement smart contracts that can automatically refund donors if goals aren't met.
                   </p>
                 </div>
                 <div>
