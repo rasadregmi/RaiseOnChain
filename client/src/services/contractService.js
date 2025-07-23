@@ -1,6 +1,6 @@
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import { ethers } from "ethers";
-import contractAbi from "../../../artifacts/contracts/CrowdfundingCampaign.sol/CrowdfundingCampaign.json";
+import contractAbi from "../abi/CrowdfundingCampaign.json";
 
 let CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || "";
 const RPC_URL = import.meta.env.VITE_RPC_URL || "http://127.0.0.1:8545";
