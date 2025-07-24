@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button"
 import FundraisingProgress from "./progressBar"
 import raiseonchainLogo from "../assets/raiseonchain_logo.png"
+import { useState } from "react";
+import ShareModal from "./ShareModal";
 
 export default function CampaignDetail({ campaign, onDonate, showWithdrawButton, onWithdraw }) {
+  const [isShareOpen, setIsShareOpen] = useState(false);
+
   const handleDonate = () => {
     if (onDonate) {
       onDonate();
@@ -10,7 +14,10 @@ export default function CampaignDetail({ campaign, onDonate, showWithdrawButton,
   }
 
   const handleShare = () => {
+    setIsShareOpen(true);
   }
+
+  const campaignLink = `${window.location.origin}/campaign/${campaign.id}`;
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -60,6 +67,12 @@ export default function CampaignDetail({ campaign, onDonate, showWithdrawButton,
 
         <p className="text-sm text-gray-600">Every donation makes a difference in this campaign</p>
       </div>
+      <ShareModal
+        isOpen={isShareOpen}
+        onClose={() => setIsShareOpen(false)}
+        link={campaignLink}
+        title={campaign.title}
+      />
     </div>
   )
 }
